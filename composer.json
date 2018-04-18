@@ -1,0 +1,21 @@
+{
+    "name": "gmzhang/interactive",
+    "description": "互动直播服务SDK",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gmzhang\\Interactive\\": "src"
+        }
+    },
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "gmzhang",
+            "email": "cnguangming@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
