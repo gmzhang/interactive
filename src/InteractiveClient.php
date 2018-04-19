@@ -36,7 +36,7 @@ class InteractiveClient
         $this->client = new Client([
             'base_uri' => $config['base_uri'],
             'headers' => [
-                'Authorization' => $config['token'],
+                'Authorization' => 'Token ' . $config['token'],
                 'Content-Type' => 'application/json'
             ]
         ]);
@@ -68,6 +68,16 @@ class InteractiveClient
         $ret = $this->client->delete($this->id . "/");
         if ($ret->getStatusCode() != 204) throw new \Exception("delete interactive fail.", $ret->getStatusCode());
         return true;
+    }
+
+    /**
+     * 获取互动内容
+     * @return mixed
+     */
+    public function getInteractive()
+    {
+        $ret = $this->client->get($this->id . '/')->getBody();
+        return json_decode((string)$ret, true);
     }
 
     /**
